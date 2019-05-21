@@ -3,6 +3,7 @@
 filetype plugin indent on "파일 형식 읽기 허용
 syntax on 
 set nocompatible "Vim 디폴트 기능들을 사용함
+set nu "커서의 위치를 항상 보이게 함
 
 set autoindent "자동 들여쓰기
 set sm "자동 들여쓰기
@@ -12,7 +13,12 @@ set tabstop=2 "간격
 set softtabstop=2 ">> 또는 << 키로 들여 쓰기 할때 스페이스 갯수
 set shiftwidth=2 "자동 들여쓰기 간격
 set expandtab "Tab을 Space로 확장
+
 autocmd FileType make setlocal noexpandtab "make 파일에선 Tab 사용
+
+autocmd FileType python set tabstop=4 "python 간격
+autocmd FileType python set softtabstop=4 "python >> 또는 << 키로 들여 쓰기 할때 스페이스 갯수
+autocmd FileType python set shiftwidth=4 "python 자동 들여쓰기 간격
 
 set number "줄번호
 set title "타이틀바에 현재 편집중인 파일을 표시
@@ -25,6 +31,8 @@ set nowrapscan "검색시 파일 끝에서 되돌려 검색하지 않음
 
 set laststatus=2 "상태바 표시 항상 
 set encoding=utf-8
+
+set hidden "히스토리 저장
 
 " Vundle
 "
@@ -47,6 +55,8 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'pboettch/vim-cmake-syntax'
+" Plugin 'Valloric/YouCompleteMe'
 "
 call vundle#end()
 filetype plugin indent on
@@ -69,17 +79,23 @@ nmap <F3> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nnoremap <F4> :nohlsearch<CR>
 
-nnoremap <C-H> <C-w>h<CR>
-nnoremap <C-J> <C-w>j<CR>
-nnoremap <C-K> <C-w>k<CR>
-nnoremap <C-L> <C-w>l<CR>
+nnoremap <C-h> <C-w>h<CR>
+nnoremap <C-j> <C-w>j<CR>
+nnoremap <C-k> <C-w>k<CR>
+nnoremap <C-l> <C-w>l<CR>
 
-nnoremap <C-t> :enew<Enter>         
-nnoremap <C-F5> :bprevious!<Enter>    " 이전 버퍼로 이동
-nnoremap <C-F6> :bnext!<Enter>        " 다음 버퍼로 이동
+nnoremap <C-a> :bd<Enter>
+nnoremap <C-e> :enew<Enter>         
+nnoremap bp :bprevious!<Enter>    " 이전 버퍼로 이동
+nnoremap bn :bnext!<Enter>        " 다음 버퍼로 이동
 nnoremap <C-F4> :bp <BAR> bd #<Enter> " 현재 버퍼를 닫고 이전 버퍼로 이동
 
 let mapleader=","
+
+map <leader>q <ESC><ESC>:q<CR>
+map <F2> <ESC><ESC>:w<CR>
+
+nnoremap <C-o> i<CR><Esc>
 
 " ctags
 "
@@ -113,6 +129,7 @@ let g:ctrlp_custom_ignore = {
 
 " bookmarks
 let g:bookmark_sign = '♥'
+" Brief Help
 " mm : Bookmark Toggle
 " mn : Bookmark Next
 " mp : Bookmark Prev
@@ -126,3 +143,6 @@ let g:airline#extensions#tabline#enabled = 1              " vim-airline 버퍼 �
 let g:airline#extensions#tabline#fnamemod = ':t'          " vim-airline 버퍼 목록 파일명만 출력
 let g:airline#extensions#tabline#buffer_nr_show = 1       " buffer number를 보여준다
 let g:airline#extensions#tabline#buffer_nr_format = '%s:' " buffer number format
+
+" rainbow
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
