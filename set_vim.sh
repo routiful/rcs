@@ -1,5 +1,13 @@
 #!/bin/bash
 
+function cecho() {
+  local exp=$1;
+  tput setaf 3;
+  tput bold
+  echo -e $exp;
+  tput sgr0;
+}
+
 cecho "START"
 cecho ""
 
