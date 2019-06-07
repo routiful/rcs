@@ -33,6 +33,10 @@ set laststatus=2 "상태바 표시 항상
 set encoding=utf-8
 
 set hidden "히스토리 저장
+set eol
+
+" higlight column right after max textwidth
+set colorcolumn=120
 
 " Vundle
 "
