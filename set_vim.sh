@@ -16,7 +16,7 @@ sudo apt update -y
 sudo apt upgrade -y
 
 cecho "Install VIM"
-sudo apt install vim
+sudo apt install vim -y
 
 cecho "Install Dependencies"
 sudo apt install build-essential cmake python3-dev clang-6.0 libclang-6.0-dev clang-format-6.0 python-clang-6.0 clang-tidy-6.0 libc++-dev lldb-6.0 lld-6.0 exuberant-ctags
