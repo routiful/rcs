@@ -27,7 +27,8 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cecho "Copy vimrc"
 cp -f $HOME/vimrc/vimrc $HOME/.vimrc
 
-cecho "Please execute :PluginInstall command when you open the vim for the first time"
+cecho "Install Plugins"
+vim +PluginInstall +qall
 
 cecho ""
 cecho "END"
