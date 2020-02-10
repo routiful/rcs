@@ -60,8 +60,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'pboettch/vim-cmake-syntax'
-" Plugin 'zxqfl/tabnine-vim'
-Plugin 'Valloric/YouCompleteMe'
 "
 call vundle#end()
 filetype plugin indent on
