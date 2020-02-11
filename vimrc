@@ -73,11 +73,11 @@ filetype plugin indent on
 
 "Colorscheme
 "
-"colorscheme jellybeans
 colorscheme seoul256
 
 " Key Mapping
 " 
+map <F2> <ESC><ESC>:w<CR>
 nmap <F3> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nnoremap <F4> :nohlsearch<CR>
@@ -87,34 +87,28 @@ nnoremap <C-j> <C-w>j<CR>
 nnoremap <C-k> <C-w>k<CR>
 nnoremap <C-l> <C-w>l<CR>
 
-nnoremap <C-a> :bd<Enter>
-nnoremap <C-e> :enew<Enter>         
 nnoremap bp :bprevious!<Enter>    " 이전 버퍼로 이동
 nnoremap bn :bnext!<Enter>        " 다음 버퍼로 이동
-nnoremap <C-F4> :bp <BAR> bd #<Enter> " 현재 버퍼를 닫고 이전 버퍼로 이동
+nnoremap bc :bp <BAR> bd #<Enter> " 현재 버퍼를 닫고 이전 버퍼로 이동
 
 let mapleader=","
 
 map <leader>q <ESC><ESC>:q<CR>
-map <F2> <ESC><ESC>:w<CR>
-
-nnoremap <C-o> i<CR><Esc>
 
 " ctags
-"
 set tags=./tags,tags
-set tags+=/home/darby/ros2_ws/src/tags
-set tags+=/home/darby/nav2_ws/src/tags
-set tags+=/home/darby/robotis_ws/src/tags
+" set tags+=/home/user/foo/bar/tags
 
+" easytags
 let g:easytags_async=1
+let g:easytags_auto_highlight = 0
 let g:easytags_include_members = 1
 let g:easytags_dynamic_files = 1
+" <C-]> Move to function or struct
+" <C-t> Back to original code
 
 " vim-multiple-cursor
 let g:multi_cursor_use_default_mapping=0
-
-" vim-multi-cursors
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
@@ -131,7 +125,10 @@ let g:ctrlp_custom_ignore = {
 \ }
 
 " bookmarks
+highlight BookmarkSign ctermbg=NONE ctermfg=160
+highlight BookmarkLine ctermbg=100 ctermfg=NONE
 let g:bookmark_sign = '♥'
+let g:bookmark_highlight_lines = 1
 " Brief Help
 " mm : Bookmark Toggle
 " mn : Bookmark Next
@@ -139,7 +136,9 @@ let g:bookmark_sign = '♥'
 " mc : Bookmark Clear
 
 " nerdcommenter
-let NERDSpaceDelims=1
+" <leader>c<space>
+" <leader>cc
+" <leader>cs
 
 " airline
 let g:airline#extensions#tabline#enabled = 1              " vim-airline 버퍼 목록 켜기
@@ -147,5 +146,4 @@ let g:airline#extensions#tabline#fnamemod = ':t'          " vim-airline 버퍼 �
 let g:airline#extensions#tabline#buffer_nr_show = 1       " buffer number를 보여준다
 let g:airline#extensions#tabline#buffer_nr_format = '%s:' " buffer number format
 
-" rainbow
-let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+
