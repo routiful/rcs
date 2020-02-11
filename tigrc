@@ -1,0 +1,5 @@
+# copy commit hash
+bind generic 9 !@sh -c "echo -n %(commit) | xclip -selection c"
+# commit amend
+bind generic + !git commit --amend
+
