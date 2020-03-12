@@ -1,7 +1,9 @@
 "Basic Settings
 "
 filetype plugin indent on "파일 형식 읽기 허용
-syntax on 
+if has("syntax")
+  syntax on 
+endif
 set nocompatible "Vim 디폴트 기능들을 사용함
 set nu "커서의 위치를 항상 보이게 함
 
@@ -38,6 +40,12 @@ set eol
 " higlight column right after max textwidth
 set colorcolumn=120
 
+set backupdir=/tmp//,.
+set directory=/tmp//,.
+if v:version >= 703
+  set undodir=/tmp//,.
+endif
+
 " Vundle
 "
 filetype off
@@ -48,8 +56,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'nanotech/jellybeans.vim'
-Plugin 'xolox/vim-easytags'
-Plugin 'xolox/vim-misc'
 Plugin 'majutsushi/tagbar'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'yuttie/comfortable-motion.vim'
@@ -77,35 +83,29 @@ colorscheme seoul256
 
 " Key Mapping
 " 
-map <F2> <ESC><ESC>:w<CR>
-nmap <F3> :NERDTreeToggle<CR>
-nmap <F8> :TagbarToggle<CR>
+let mapleader=","
+
+" Quit
+nnoremap <Leader>q :q<CR>
+
+" Save
+inoremap <F2> <esc>:update<CR>
+nnoremap <F2> :update<CR>
+
+nnoremap <F3> :NERDTreeToggle<CR>
+nnoremap <F8> :TagbarToggle<CR>
 nnoremap <F4> :nohlsearch<CR>
 
+" Move
 nnoremap <C-h> <C-w>h<CR>
 nnoremap <C-j> <C-w>j<CR>
 nnoremap <C-k> <C-w>k<CR>
 nnoremap <C-l> <C-w>l<CR>
 
+" Buffer
 nnoremap bp :bprevious!<Enter>    " 이전 버퍼로 이동
 nnoremap bn :bnext!<Enter>        " 다음 버퍼로 이동
 nnoremap bc :bp <BAR> bd #<Enter> " 현재 버퍼를 닫고 이전 버퍼로 이동
-
-let mapleader=","
-
-map <leader>q <ESC><ESC>:q<CR>
-
-" ctags
-set tags=./tags,tags
-" set tags+=/home/user/foo/bar/tags
-
-" easytags
-let g:easytags_async=1
-let g:easytags_auto_highlight = 0
-let g:easytags_include_members = 1
-let g:easytags_dynamic_files = 1
-" <C-]> Move to function or struct
-" <C-t> Back to original code
 
 " vim-multiple-cursor
 let g:multi_cursor_use_default_mapping=0
