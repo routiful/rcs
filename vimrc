@@ -86,19 +86,30 @@ colorscheme seoul256
 let mapleader=","
 
 " Quit
-nnoremap <Leader>q :q<CR>
+inoremap <leader>q <esc>:q<CR>
+nnoremap <leader>q :q<CR>
 
 " Save
 inoremap <F2> <esc>:update<CR>
-nnoremap <F2> :update<CR>
 inoremap <leader>s <esc>:update<CR>
+
+nnoremap <F2> :update<CR>
 nnoremap <leader>s :update<CR>
+
+inoremap <F3> <esc>:NERDTreeToggle<CR>
+inoremap <leader>N <esc>:NERDTreeToggle<CR>
 
 nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <leader>N :NERDTreeToggle<CR>
 
+inoremap <F8> <esc>:TagbarToggle<CR>
+inoremap <leader>t <esc>:TagbarToggle<CR>
+
 nnoremap <F8> :TagbarToggle<CR>
 nnoremap <leader>t :TagbarToggle<CR>
+
+inoremap <F4> <esc>:nohlsearch<CR>
+inoremap <leader>n <esc>:nohlsearch<CR>
 
 nnoremap <F4> :nohlsearch<CR>
 nnoremap <leader>n :nohlsearch<CR>
