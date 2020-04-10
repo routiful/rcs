@@ -89,6 +89,9 @@ let mapleader=","
 inoremap <leader>q <esc>:q<CR>
 nnoremap <leader>q :q<CR>
 
+inoremap <leader>Q <esc>:wq<CR>
+nnoremap <leader>Q :wq<CR>
+
 " Save
 inoremap <F2> <esc>:update<CR>
 inoremap <leader>s <esc>:update<CR>
