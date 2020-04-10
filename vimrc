@@ -91,10 +91,17 @@ nnoremap <Leader>q :q<CR>
 " Save
 inoremap <F2> <esc>:update<CR>
 nnoremap <F2> :update<CR>
+inoremap <leader>s <esc>:update<CR>
+nnoremap <leader>s :update<CR>
 
 nnoremap <F3> :NERDTreeToggle<CR>
+nnoremap <leader>N :NERDTreeToggle<CR>
+
 nnoremap <F8> :TagbarToggle<CR>
+nnoremap <leader>t :TagbarToggle<CR>
+
 nnoremap <F4> :nohlsearch<CR>
+nnoremap <leader>n :nohlsearch<CR>
 
 " Move
 nnoremap <C-h> <C-w>h<CR>
