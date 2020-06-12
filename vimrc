@@ -1,5 +1,4 @@
 "Basic Settings
-"
 filetype plugin indent on "파일 형식 읽기 허용
 if has("syntax")
   syntax on 
@@ -38,7 +37,7 @@ set hidden "히스토리 저장
 set eol
 
 " higlight column right after max textwidth
-set colorcolumn=120
+set colorcolumn=100
 
 set backupdir=/tmp//,.
 set directory=/tmp//,.
@@ -100,10 +99,10 @@ nnoremap <F2> :update<CR>
 nnoremap <leader>s :update<CR>
 
 inoremap <F3> <esc>:NERDTreeToggle<CR>
-inoremap <leader>N <esc>:NERDTreeToggle<CR>
+inoremap <leader>e <esc>:NERDTreeToggle<CR>
 
 nnoremap <F3> :NERDTreeToggle<CR>
-nnoremap <leader>N :NERDTreeToggle<CR>
+nnoremap <leader>e :NERDTreeToggle<CR>
 
 inoremap <F8> <esc>:TagbarToggle<CR>
 inoremap <leader>t <esc>:TagbarToggle<CR>
