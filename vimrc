@@ -30,8 +30,7 @@ set incsearch "점진적으로 찾기
 set ignorecase "검색시 검색어의 대소문자 무시
 set nowrapscan "검색시 파일 끝에서 되돌려 검색하지 않음
 
-set laststatus=2 "상태바 표시 항상 
-set encoding=utf-8
+set laststatus=2 "상태바 표시 항상 set encoding=utf-8
 
 set hidden "히스토리 저장
 set eol
@@ -49,6 +48,7 @@ endif
 "
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.fzf
 call vundle#begin()
 "
 Plugin 'VundleVim/Vundle.vim'
@@ -59,9 +59,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'mg979/vim-visual-multi'
 Plugin 'yuttie/comfortable-motion.vim'
 Plugin 'junegunn/seoul256.vim'
+Plugin 'junegunn/fzf.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Yggdroot/indentLine'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'pboettch/vim-cmake-syntax'
@@ -166,4 +166,11 @@ let g:airline#extensions#tabline#fnamemod = ':t'          " vim-airline 버퍼 �
 let g:airline#extensions#tabline#buffer_nr_show = 1       " buffer number를 보여준다
 let g:airline#extensions#tabline#buffer_nr_format = '%s:' " buffer number format
 
+" fzf
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-o': 'split',
+  \ 'ctrl-e': 'vsplit' }
+
+let g:fzf_layout = { 'down': '40%' }
 
