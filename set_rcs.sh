@@ -43,6 +43,11 @@ cecho "Install Vundle"
 cd
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+cecho "Install fzf"
+cd
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
 cecho "Copy vimrc"
 cp -f $CWD/vimrc $HOME/.vimrc
 
