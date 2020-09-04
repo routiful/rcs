@@ -47,7 +47,7 @@ cecho "Install fzf"
 cd
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install -y
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse' << ~/.bashrc
+echo "export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'" >> ~/.bashrc
 
 cecho "Copy vimrc"
 cp -f $CWD/vimrc $HOME/.vimrc
