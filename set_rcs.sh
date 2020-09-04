@@ -46,7 +46,8 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cecho "Install fzf"
 cd
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+~/.fzf/install -y
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse' << ~/.bashrc
 
 cecho "Copy vimrc"
 cp -f $CWD/vimrc $HOME/.vimrc
