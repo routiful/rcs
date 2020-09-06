@@ -1,7 +1,7 @@
 "Basic Settings
 filetype plugin indent on "파일 형식 읽기 허용
 if has("syntax")
-  syntax on 
+  syntax on
 endif
 set nocompatible "Vim 디폴트 기능들을 사용함
 set nu "커서의 위치를 항상 보이게 함
@@ -30,7 +30,7 @@ set incsearch "점진적으로 찾기
 set ignorecase "검색시 검색어의 대소문자 무시
 set nowrapscan "검색시 파일 끝에서 되돌려 검색하지 않음
 
-set laststatus=2 "상태바 표시 항상 
+set laststatus=2 "상태바 표시 항상
 set encoding=utf-8
 
 set hidden "히스토리 저장
@@ -49,6 +49,7 @@ endif
 "
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=/usr/local/opt/fzf
 call vundle#begin()
 "
 Plugin 'VundleVim/Vundle.vim'
@@ -61,10 +62,11 @@ Plugin 'yuttie/comfortable-motion.vim'
 Plugin 'junegunn/seoul256.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Yggdroot/indentLine'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'pboettch/vim-cmake-syntax'
+Plugin 'junegunn/fzf.vim'
+Plugin 'ntpeters/vim-better-whitespace'
 "
 call vundle#end()
 filetype plugin indent on
@@ -81,7 +83,7 @@ filetype plugin indent on
 colorscheme seoul256
 
 " Key Mapping
-" 
+"
 let mapleader=","
 
 " Quit
@@ -138,12 +140,6 @@ let g:multi_cursor_quit_key='<Esc>'
 " indentLine
 let g:indentLine_color_term = 100
 
-" ctrlp
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|public$\|log$\|tmp$\|vendor$',
-  \ 'file': '\v\.(exe|so|dll)$'
-\ }
-
 " bookmarks
 highlight BookmarkSign ctermbg=NONE ctermfg=160
 highlight BookmarkLine ctermbg=100 ctermfg=NONE
@@ -155,15 +151,19 @@ let g:bookmark_highlight_lines = 1
 " mp : Bookmark Prev
 " mc : Bookmark Clear
 
-" nerdcommenter
-" <leader>c<space>
-" <leader>cc
-" <leader>cs
-
 " airline
 let g:airline#extensions#tabline#enabled = 1              " vim-airline 버퍼 목록 켜기
 let g:airline#extensions#tabline#fnamemod = ':t'          " vim-airline 버퍼 목록 파일명만 출력
 let g:airline#extensions#tabline#buffer_nr_show = 1       " buffer number를 보여준다
 let g:airline#extensions#tabline#buffer_nr_format = '%s:' " buffer number format
 
+" fzf-vim
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-o': 'split',
+  \ 'ctrl-e': 'vsplit' }
 
+" whitespace
+highlight ExtraWhitespace ctermbg='red'
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
