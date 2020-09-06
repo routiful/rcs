@@ -50,6 +50,7 @@ endif
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
 call vundle#begin()
 "
 Plugin 'VundleVim/Vundle.vim'
@@ -57,9 +58,10 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'terryma/vim-multiple-cursors'
+Plugin 'mg979/vim-visual-multi'
 Plugin 'yuttie/comfortable-motion.vim'
 Plugin 'junegunn/seoul256.vim'
+Plugin 'junegunn/fzf.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tpope/vim-fugitive'
@@ -162,6 +164,8 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-o': 'split',
   \ 'ctrl-e': 'vsplit' }
+
+let g:fzf_layout = { 'down': '40%' }
 
 " whitespace
 highlight ExtraWhitespace ctermbg='red'

@@ -21,6 +21,7 @@ sudo apt install vim -y
 
 cecho "Install Some Dependencies"
 sudo apt install -y \
+  git \
   build-essential \
   cmake \
   python3-dev \
@@ -42,6 +43,13 @@ sudo apt install -y \
 cecho "Install Vundle"
 cd
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+cecho "Install fzf"
+cd
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+echo "export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'" >> ~/.bashrc
+source ~/.bashrc
 
 cecho "Copy vimrc"
 cp -f $CWD/vimrc $HOME/.vimrc
