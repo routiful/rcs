@@ -67,7 +67,6 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'tpope/vim-fugitive'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'pboettch/vim-cmake-syntax'
-Plugin 'junegunn/fzf.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 "
 call vundle#end()
