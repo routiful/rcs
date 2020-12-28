@@ -119,4 +119,4 @@ let g:cpp_class_decl_highlight = 1
 let g:cpp_posix_standard = 1
 
 " snippets
-nnoremap ,main :-1read $HOME/.vim/snippets/c_main.sni<CR>4ji<TAB>
+nnoremap ,cmain :-1read $HOME/.vim/snippets/c_main.sni<CR>4ji<TAB>
