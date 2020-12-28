@@ -1,0 +1,122 @@
+"Basic Settings
+filetype plugin indent on "파일 형식 읽기 허용
+if has("syntax")
+  syntax on
+endif
+set nocompatible "Vim 디폴트 기능들을 사용함
+set nu "커서의 위치를 항상 보이게 함
+
+set autoindent "자동 들여쓰기
+set sm "자동 들여쓰기
+"set cindent "C언어 자동 들여쓰기
+
+set tabstop=2 "간격
+set softtabstop=2 ">> 또는 << 키로 들여 쓰기 할때 스페이스 갯수
+set shiftwidth=2 "자동 들여쓰기 간격
+set expandtab "Tab을 Space로 확장
+
+autocmd FileType make setlocal noexpandtab "make 파일에선 Tab 사용
+
+autocmd FileType python set tabstop=4 "python 간격
+autocmd FileType python set softtabstop=4 "python >> 또는 << 키로 들여 쓰기 할때 스페이스 갯수
+autocmd FileType python set shiftwidth=4 "python 자동 들여쓰기 간격
+
+set number "줄번호
+set title "타이틀바에 현재 편집중인 파일을 표시
+set ruler "상태표시줄에 커서 위치 보여줌
+
+set hlsearch "검색어 하이라이팅
+set incsearch "점진적으로 찾기
+set ignorecase "검색시 검색어의 대소문자 무시
+set nowrapscan "검색시 파일 끝에서 되돌려 검색하지 않음
+
+set laststatus=2 "상태바 표시 항상
+set encoding=utf-8
+
+set hidden "히스토리 저장
+set eol
+
+" higlight column right after max textwidth
+set colorcolumn=100
+
+set path+=**
+set wildmenu " 파일 이름 탭 매칭
+
+" Tweaks for browing
+let g:netrw_banner=0
+let g:netrw_altv=1
+let g:netrw_liststyle=3
+let g:netrw_browse_split=3
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^|\s\s)\zs\.\S\+'
+
+" Set tags
+set tags+=$HOME/ros2_ws/src/tags
+
+" Vundle
+"
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+" set rtp+=/usr/local/opt/fzf
+" set rtp+=~/.fzf
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'dracula/vim', { 'name': 'dracula' }
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'nanotech/jellybeans.vim'
+"Plugin 'majutsushi/tagbar'
+"Plugin 'mg979/vim-visual-multi'
+"Plugin 'yuttie/comfortable-motion.vim'
+"Plugin 'junegunn/seoul256.vim'
+"Plugin 'junegunn/fzf.vim'
+"Plugin 'scrooloose/nerdcommenter'
+"Plugin 'Yggdroot/indentLine'
+"Plugin 'MattesGroeger/vim-bookmarks'
+"Plugin 'pboettch/vim-cmake-syntax'
+"Plugin 'ntpeters/vim-better-whitespace'
+
+call vundle#end()
+filetype plugin indent on
+
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+
+"Colorscheme
+colorscheme dracula
+
+" Key Mapping
+"
+let mapleader=","
+
+" Move
+nnoremap <C-h> <C-w>h<CR>
+nnoremap <C-j> <C-w>j<CR>
+nnoremap <C-k> <C-w>k<CR>
+nnoremap <C-l> <C-w>l<CR>
+
+" Buffer
+nnoremap bp :bprevious!<Enter>    " 이전 버퍼로 이동
+nnoremap bn :bnext!<Enter>        " 다음 버퍼로 이동
+nnoremap bc :bp <BAR> bd #<Enter> " 현재 버퍼를 닫고 이전 버퍼로 이동
+
+" whitespace
+" highlight ExtraWhitespace ctermbg='red'
+" let g:better_whitespace_enabled=1
+" let g:strip_whitespace_on_save=1
+
+" cpp enhanced highlight
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+
+" snippets
+nnoremap ,main :-1read $HOME/.vim/snippets/c_main.sni<CR>4ji<TAB>
