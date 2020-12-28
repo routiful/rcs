@@ -51,7 +51,7 @@ echo "export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'" >> ~/.bashrc
 source ~/.bashrc
 
 cecho "Copy vimrc"
-cp -r -f $CWD/vim $HOME/.vim
+cp -r -f vim/* $HOME/.vim/
 
 cecho "Copy tigrc"
 cp -f $CWD/tigrc $HOME/.tigrc
