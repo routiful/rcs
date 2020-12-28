@@ -37,8 +37,7 @@ sudo apt install -y \
 
 cecho "Install Some tools"
 sudo apt install -y \
-  byobu \
-  tig
+  byobu
 
 cecho "Install Vundle"
 cd
@@ -52,7 +51,7 @@ echo "export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'" >> ~/.bashrc
 source ~/.bashrc
 
 cecho "Copy vimrc"
-cp -f $CWD/vimrc $HOME/.vimrc
+cp -r -f $CWD/vim $HOME/.vim
 
 cecho "Copy tigrc"
 cp -f $CWD/tigrc $HOME/.tigrc
