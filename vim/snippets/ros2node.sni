@@ -1,0 +1,31 @@
+#ifndef <PROJECT>_<PATH>_<FILE>_HPP_
+#define <PROJECT>_<PATH>_<FILE>_HPP_
+
+#include <memory>
+#include <string>
+#include <utility>
+
+#include "rclcpp/rclcpp.hpp"
+
+namespace
+{
+class <NODE_NAME> : public rclcpp::Node
+{
+ pubilc:
+  explicit NODE_NAME(const rclcpp:NodeOptions & node_options = rclcpp::NodeOptions())
+  : NODE_NAME("NODE_NAME", node_options)
+  {
+
+  }
+
+  virtual ~NODE_NAME()
+  {
+
+  }
+
+ private:
+
+};
+}  // namespace
+#endif <PROJECT>_<PATH>_<FILE>_HPP_
+

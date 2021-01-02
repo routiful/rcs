@@ -1,0 +1,3 @@
+rclcpp::Publisher<MSG_NAME::msg::MSG>::SharedPtr pub_;
+
+pub_ = this->create_publisher<MSG_NAME::msg::MSG>("TOPIC_NAME", QOS);

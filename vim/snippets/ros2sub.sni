@@ -1,0 +1,11 @@
+rclcpp::Subscription<MSG_NAME::msg::MSG>::SharedPtr sub_;
+
+sub_ = this->create_subscription<MSG_NAME::msg::MSG>(
+    "TOPIC_NAME",
+    QOS,
+    [this](const MSG_NAME::msg::MSG::SharedPtr msg) -> void
+      {
+
+      }
+    );
+

@@ -1,0 +1,4 @@
+rclcpp::Client<MSG_NAME::srv::MSG>::SharedPtr client_;
+
+client_ = this->create_client<MSG_NAME::srv::MSG>("SERVER_NAME");
+

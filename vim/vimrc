@@ -108,7 +108,7 @@ nnoremap bn :bnext!<Enter>        " 다음 버퍼로 이동
 nnoremap bc :bp <BAR> bd #<Enter> " 현재 버퍼를 닫고 이전 버퍼로 이동
 
 " whitespace
-highlight ExtraWhitespace ctermbg='red'
+highlight ExtraWhitespace ctermbg='white'
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
@@ -121,3 +121,21 @@ let g:cpp_posix_standard = 1
 " snippets
 nnoremap ,cmain :-1read $HOME/.vim/snippets/c_main.sni<CR>4ji<TAB>
 nnoremap ,ros2main :-1read $HOME/.vim/snippets/ros2main.sni<CR>
+
+nnoremap ,ros2cnode :-1read $HOME/.vim/snippets/ros2node.sni<CR>
+
+nnoremap ,ros2cpubd :read! sed -n 1,1p $HOME/.vim/snippets/ros2pub.sni<CR>
+nnoremap ,ros2cpubc :read! sed -n 3,3p $HOME/.vim/snippets/ros2pub.sni<CR>
+
+nnoremap ,ros2csubd :read! sed -n 1,1p $HOME/.vim/snippets/ros2sub.sni<CR>
+nnoremap ,ros2csubc :read! sed -n 3,10p $HOME/.vim/snippets/ros2sub.sni<CR>
+
+nnoremap ,ros2csvrd :read! sed -n 1,1p $HOME/.vim/snippets/ros2server.sni<CR>
+nnoremap ,ros2csvrc :read! sed -n 3,9p $HOME/.vim/snippets/ros2server.sni<CR>
+
+nnoremap ,ros2cclid :read! sed -n 1,1p $HOME/.vim/snippets/ros2client.sni<CR>
+nnoremap ,ros2cclic :read! sed -n 3,3p $HOME/.vim/snippets/ros2client.sni<CR>
+
+nnoremap ,ros2casvrd :read! sed -n 1,1p $HOME/.vim/snippets/ros2actionserver.sni<CR>
+nnoremap ,ros2casvrc :read! sed -n 3,13p $HOME/.vim/snippets/ros2actionserver.sni<CR>
+
