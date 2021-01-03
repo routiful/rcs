@@ -11,9 +11,9 @@ namespace
 {
 class <NODE_NAME> : public rclcpp::Node
 {
- pubilc:
+ public:
   explicit NODE_NAME(const rclcpp:NodeOptions & node_options = rclcpp::NodeOptions())
-  : NODE_NAME("NODE_NAME", node_options)
+  : Node("NODE_NAME", node_options)
   {
 
   }
@@ -27,5 +27,5 @@ class <NODE_NAME> : public rclcpp::Node
 
 };
 }  // namespace
-#endif <PROJECT>_<PATH>_<FILE>_HPP_
+#endif // <PROJECT>_<PATH>_<FILE>_HPP_
 

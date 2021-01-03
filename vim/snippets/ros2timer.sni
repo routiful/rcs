@@ -1,0 +1,9 @@
+rclcpp::TimerBase::SharedPtr timer_;
+
+timer_ = this->create_wall_timer(
+  1s,
+  [this]() -> void
+    {
+    }
+  );
+
