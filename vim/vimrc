@@ -120,22 +120,12 @@ let g:cpp_posix_standard = 1
 
 " snippets
 nnoremap ,cmain :-1read $HOME/.vim/snippets/c_main.sni<CR>4ji<TAB>
-nnoremap ,ros2main :-1read $HOME/.vim/snippets/ros2main.sni<CR>
-
+nnoremap ,ros2cmain :-1read $HOME/.vim/snippets/ros2main.sni<CR>
 nnoremap ,ros2cnode :-1read $HOME/.vim/snippets/ros2node.sni<CR>
-
-nnoremap ,ros2cpubd :read! sed -n 1,1p $HOME/.vim/snippets/ros2pub.sni<CR>
-nnoremap ,ros2cpubc :read! sed -n 3,3p $HOME/.vim/snippets/ros2pub.sni<CR>
-
-nnoremap ,ros2csubd :read! sed -n 1,1p $HOME/.vim/snippets/ros2sub.sni<CR>
-nnoremap ,ros2csubc :read! sed -n 3,10p $HOME/.vim/snippets/ros2sub.sni<CR>
-
-nnoremap ,ros2csvrd :read! sed -n 1,1p $HOME/.vim/snippets/ros2server.sni<CR>
-nnoremap ,ros2csvrc :read! sed -n 3,12p $HOME/.vim/snippets/ros2server.sni<CR>
-
-nnoremap ,ros2cclid :read! sed -n 1,1p $HOME/.vim/snippets/ros2client.sni<CR>
-nnoremap ,ros2cclic :read! sed -n 3,3p $HOME/.vim/snippets/ros2client.sni<CR>
-
-nnoremap ,ros2casvrd :read! sed -n 1,1p $HOME/.vim/snippets/ros2actionserver.sni<CR>
-nnoremap ,ros2casvrc :read! sed -n 3,13p $HOME/.vim/snippets/ros2actionserver.sni<CR>
+nnoremap ,ros2ctim :-1read $HOME/.vim/snippets/ros2timer.sni<CR>
+nnoremap ,ros2cpub :-1read $HOME/.vim/snippets/ros2pub.sni<CR>
+nnoremap ,ros2csub :-1read $HOME/.vim/snippets/ros2sub.sni<CR>
+nnoremap ,ros2cser :-1read $HOME/.vim/snippets/ros2server.sni<CR>
+nnoremap ,ros2ccli :-1read $HOME/.vim/snippets/ros2client.sni<CR>
+nnoremap ,ros2caser :-1read $HOME/.vim/snippets/ros2actionserver.sni<CR>
 
