@@ -1,5 +1,6 @@
 rclcpp::Service<MSG_NAME::srv::MSG>::SharedPtr srv_;
 
+
 auto callback =
   [this](
     const std::shared_ptr<MSG_NAME::srv::MSG::Request> request,
@@ -8,3 +9,4 @@ auto callback =
 
     };
 
+srv_ = create_service<MSG_NAME::srv::MSG>("SERVICE_NAME", callback);

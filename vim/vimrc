@@ -131,7 +131,7 @@ nnoremap ,ros2csubd :read! sed -n 1,1p $HOME/.vim/snippets/ros2sub.sni<CR>
 nnoremap ,ros2csubc :read! sed -n 3,10p $HOME/.vim/snippets/ros2sub.sni<CR>
 
 nnoremap ,ros2csvrd :read! sed -n 1,1p $HOME/.vim/snippets/ros2server.sni<CR>
-nnoremap ,ros2csvrc :read! sed -n 3,9p $HOME/.vim/snippets/ros2server.sni<CR>
+nnoremap ,ros2csvrc :read! sed -n 3,12p $HOME/.vim/snippets/ros2server.sni<CR>
 
 nnoremap ,ros2cclid :read! sed -n 1,1p $HOME/.vim/snippets/ros2client.sni<CR>
 nnoremap ,ros2cclic :read! sed -n 3,3p $HOME/.vim/snippets/ros2client.sni<CR>
