@@ -62,7 +62,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'jiangmiao/auto-pairs'
+"Plugin 'jiangmiao/auto-pairs'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'dracula/vim', { 'name': 'dracula' }
 "Plugin 'vim-airline/vim-airline'
@@ -90,7 +90,7 @@ filetype plugin indent on
 "
 
 "Colorscheme
-colorscheme dracula
+"colorscheme dracula
 
 " Key Mapping
 "
@@ -107,6 +107,10 @@ nnoremap bp :bprevious!<Enter>    " 이전 버퍼로 이동
 nnoremap bn :bnext!<Enter>        " 다음 버퍼로 이동
 nnoremap bc :bp <BAR> bd #<Enter> " 현재 버퍼를 닫고 이전 버퍼로 이동
 
+" Tab
+nnoremap <C-S-h> gT
+nnoremap <C-S-l> gt
+
 " whitespace
 highlight ExtraWhitespace ctermbg='white'
 let g:better_whitespace_enabled=1
@@ -119,7 +123,7 @@ let g:cpp_class_decl_highlight = 1
 let g:cpp_posix_standard = 1
 
 " snippets
-nnoremap ,cmain :-1read $HOME/.vim/snippets/c_main.sni<CR>4ji<TAB>
+nnoremap ,cmain :-1read $HOME/.vim/snippets/c_main.sni<CR>6ji<TAB>
 nnoremap ,ros2cmain :-1read $HOME/.vim/snippets/ros2main.sni<CR>
 nnoremap ,ros2cnode :-1read $HOME/.vim/snippets/ros2node.sni<CR>
 nnoremap ,ros2ctim :-1read $HOME/.vim/snippets/ros2timer.sni<CR>
