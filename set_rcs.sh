@@ -55,6 +55,7 @@ cecho "Copy vimrc"
 sudo cp -rf $CWD/vim/* $HOME/.vim/
 
 cecho "Copy init.vim"
+mkdir $HOME/.config/nvim
 sudo cp -rf $CWD/init.vim $HOME/.config/nvim/
 
 cecho "Copy tigrc"
