@@ -16,8 +16,9 @@ cecho ""
 cecho "Update and Upgrade"
 sudo apt update -y && sudo apt upgrade -y
 
-cecho "Install VIM"
+cecho "Install NVIM"
 sudo apt install vim -y
+sudo apt install neovim -y
 
 cecho "Install Some Dependencies"
 sudo apt install -y \
@@ -51,10 +52,13 @@ echo "export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'" >> ~/.bashrc
 source ~/.bashrc
 
 cecho "Copy vimrc"
-cp -r -f vim/* $HOME/.vim/
+sudo cp -r $CWD/vim/* $HOME/.vim/
+
+cecho "Copy init.vim"
+sudo cp $CWD/init.vim $HOME/.config/nvim/
 
 cecho "Copy tigrc"
-cp -f $CWD/tigrc $HOME/.tigrc
+sudo cp -f $CWD/tigrc $HOME/.tigrc
 
 cecho "Install Plugins"
 vim +PluginInstall +qall

@@ -1,3 +1,9 @@
-cp -r -f ~/.vim/snippets/* vim/snippets/
-cp -f ~/.vim/vimrc vim/vimrc
+cecho "Copy vimrc"
+sudo cp -r $HOME/.vim/* $CWD/vim/
+
+cecho "Copy init.vim"
+sudo cp $HOME/.config/nvim/ $CWD/init.vim
+
+cecho "Copy tigrc"
+sudo cp $HOME/.tigrc $CWD/tigrc
 
