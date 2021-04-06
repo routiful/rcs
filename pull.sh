@@ -1,9 +1,9 @@
-cecho "Copy vimrc"
-sudo cp -rf $HOME/.vim/* $CWD/vim/
+echo "Copy vimrc"
+cp -rf $HOME/.vim/* $PWD/vim/
 
-cecho "Copy init.vim"
-sudo cp -rf $HOME/.config/nvim/ $CWD/init.vim
+echo "Copy init.vim"
+cp -rf $HOME/.config/nvim/ $PWD/
 
-cecho "Copy tigrc"
-sudo cp -rf $HOME/.tigrc $CWD/tigrc
+echo "Copy tigrc"
+cp -rf $HOME/.tigrc $PWD/tigrc
 
