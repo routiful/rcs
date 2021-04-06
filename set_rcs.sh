@@ -8,8 +8,6 @@ function cecho() {
   tput sgr0;
 }
 
-CWD=`pwd`
-
 cecho "START"
 cecho ""
 
@@ -52,14 +50,14 @@ echo "export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'" >> ~/.bashrc
 source ~/.bashrc
 
 cecho "Copy vimrc"
-sudo cp -rf $CWD/vim/* $HOME/.vim/
+cp -rf $PWD/vim/* $HOME/.vim/
 
 cecho "Copy init.vim"
 mkdir $HOME/.config/nvim
-sudo cp -rf $CWD/init.vim $HOME/.config/nvim/
+cp -rf $PWD/init.vim $HOME/.config/nvim/
 
 cecho "Copy tigrc"
-sudo cp -rf $CWD/tigrc $HOME/.tigrc
+cp -rf $PWD/tigrc $HOME/.tigrc
 
 cecho "Install Plugins"
 vim +PluginInstall +qall
