@@ -14,13 +14,10 @@ cecho ""
 cecho "Update and Upgrade"
 sudo apt update -y && sudo apt upgrade -y
 
-cecho "Install NVIM"
-sudo apt install vim -y
-sudo apt install neovim -y
-
 cecho "Install Some Dependencies"
 sudo apt install -y \
   git \
+  wget \
   build-essential \
   cmake \
   python3-dev \
@@ -38,12 +35,23 @@ cecho "Install Some tools"
 sudo apt install -y \
   byobu
 
+cecho "Install NVIM 0.5.0"
+cd ${HOME}
+wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+sudo chmod u+x nvim.appimage
+./nvim.appimage --appimage-extract
+
+echo "export PATH=$PATH:$HOME/squashfs-root/usr/bin" >> ~/.bashrc
+echo "alias vim='nvim'" >> ~/.bashrc
+
+rm nvim.appimage
+
 cecho "Install Vundle"
-cd
+cd ${HOME}
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 cecho "Install fzf"
-cd
+cd ${HOME}
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 echo "export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'" >> ~/.bashrc
