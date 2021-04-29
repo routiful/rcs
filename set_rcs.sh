@@ -36,10 +36,16 @@ sudo apt install -y \
   byobu
 
 cecho "Install NVIM 0.5.0"
-cd ${HOME}
-wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-sudo chmod u+x nvim.appimage
-./nvim.appimage --appimage-extract
+HW_ARCH=$(dpkg --print-architecture)
+
+if [ "$HW_ARCH" = "arm64" ]; then
+  sudo apt install -y neovim*
+else
+  cd ${HOME}
+  wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+  sudo chmod u+x nvim.appimage
+  ./nvim.appimage --appimage-extract
+fi
 
 echo "export PATH=$PATH:$HOME/squashfs-root/usr/bin" >> ~/.bashrc
 echo "alias vim='nvim'" >> ~/.bashrc
