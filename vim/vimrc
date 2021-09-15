@@ -81,6 +81,7 @@ Plugin 'junegunn/fzf.vim'
 "Plugin 'MattesGroeger/vim-bookmarks'
 "Plugin 'pboettch/vim-cmake-syntax'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin indent on
@@ -156,6 +157,7 @@ let g:fzf_layout = { 'down': '30%' }
 
 " snippets
 nnoremap ,cmain :-1read $HOME/.vim/snippets/c_main.sni<CR>6ji<TAB>
+nnoremap ,pyfirst :-1read $HOME/.vim/snippets/python3_shebang.sni<CR>
 nnoremap ,ros2cmain :-1read $HOME/.vim/snippets/ros2main.sni<CR>
 nnoremap ,ros2cnode :-1read $HOME/.vim/snippets/ros2node.sni<CR>
 nnoremap ,ros2ctim :-1read $HOME/.vim/snippets/ros2timer.sni<CR>
