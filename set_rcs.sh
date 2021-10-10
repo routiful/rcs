@@ -29,7 +29,8 @@ sudo apt install -y \
   libc++-dev \
   lldb-6.0 \
   lld-6.0 \
-  exuberant-ctags
+  exuberant-ctags \
+  tig
 
 cecho "Install Some tools"
 sudo apt install -y \
@@ -64,14 +65,14 @@ echo "export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'" >> ~/.bashrc
 source ~/.bashrc
 
 cecho "Copy vimrc"
-cp -rf $PWD/vim/* $HOME/.vim/
+cp -rf vim/* ~/.vim/
 
 cecho "Copy init.vim"
 mkdir $HOME/.config/nvim
-cp -rf $PWD/init.vim $HOME/.config/nvim/
+cp -rf init.vim ~/.config/nvim/
 
 cecho "Copy tigrc"
-cp -rf $PWD/tigrc $HOME/.tigrc
+cp -rf tigrc ~/.tigrc
 
 cecho "Install Plugins"
 vim +PluginInstall +qall
