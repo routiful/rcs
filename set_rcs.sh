@@ -74,6 +74,9 @@ cp -rf init.vim ~/.config/nvim/
 cecho "Copy tigrc"
 cp -rf tigrc ~/.tigrc
 
+cecho "Copy tmux.conf"
+cp -rf tmux.conf ~/.tmux.conf
+
 cecho "Install Plugins"
 vim +PluginInstall +qall
 
